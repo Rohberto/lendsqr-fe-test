@@ -1,0 +1,31 @@
+:root {
+  font-family: $font-family-base;
+  font-weight: $font-weight-regular;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  color: $color-text-primary;
+  background: $color-bg;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+h1 { font-size: 2rem; line-height: 2.5rem; }
+h2 { font-size: 1.5rem; line-height: 2rem; }
+h3 { font-size: 1.25rem; line-height: 1.75rem; }
+h4 { font-size: 1.125rem; line-height: 1.5rem; }
+
+p {
+  margin: 0 0 $space-4 0;
+}
