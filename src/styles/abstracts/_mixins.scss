@@ -1,4 +1,4 @@
-// Flex helper (very common)
+
 @mixin flex($direction: row, $justify: flex-start, $align: stretch) {
   display: flex;
   flex-direction: $direction;
@@ -6,7 +6,7 @@
   align-items: $align;
 }
 
-// Responsive breakpoint helper (mobile-first)
+
 $breakpoints: (
   sm: 576px,
   md: 768px,
@@ -27,7 +27,7 @@ $breakpoints: (
   }
 }
 
-// Optional: respond-above if you ever need desktop-first
+
 @mixin respond-above($breakpoint) {
   $value: map-get($breakpoints, $breakpoint);
   @if $value {
