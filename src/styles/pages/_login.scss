@@ -1,4 +1,6 @@
-@import '../abstracts/mixins';
+@use '../abstracts/mixins' as *;
+@use '../abstracts//variables' as *;
+
 .login-page {
   @include flex(row, stretch, center);
   height: 100vh;

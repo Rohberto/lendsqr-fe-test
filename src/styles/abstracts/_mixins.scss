@@ -1,4 +1,4 @@
-
+@use 'sass:map';
 @mixin flex($direction: row, $justify: flex-start, $align: stretch) {
   display: flex;
   flex-direction: $direction;
@@ -16,7 +16,7 @@ $breakpoints: (
 );
 
 @mixin respond-below($breakpoint) {
-  $value: map-get($breakpoints, $breakpoint);
+  $value: map.get($breakpoints, $breakpoint);
 
   @if $value {
     @media (max-width: ($value - 0.02px)) {
@@ -29,7 +29,7 @@ $breakpoints: (
 
 
 @mixin respond-above($breakpoint) {
-  $value: map-get($breakpoints, $breakpoint);
+  $value: map.get($breakpoints, $breakpoint);
   @if $value {
     @media (min-width: $value) {
       @content;

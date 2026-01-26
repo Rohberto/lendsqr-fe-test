@@ -1,28 +1,28 @@
 // 1. Abstracts first (no output)
-@import 'abstracts/_variables';
-//@import 'abstracts/functions';
-@import 'abstracts/_mixins';
-//@import 'abstracts/breakpoints';
+@use 'abstracts/variables' as *;
+//@use 'abstracts/functions';
+@use 'abstracts/mixins' as *;
+//@use 'abstracts/breakpoints';
 
 // 2. Base / reset (affects everything)
-@import 'base/_reset';
-@import 'base/_typography';
-//@import 'base/base';
+@use 'base/reset';
+@use 'base/typography';
+//@use 'base/base';
 
 // 3. Layout (structural)
-//@import 'layout/grid';
-//@import 'layout/sidebar-layout';
+//@use 'layout/grid';
+//@use 'layout/sidebar-layout';
 
 // 4. Reusable components
-//@import 'components/Button';
-//@import 'components/StatusBadge';
-//@import 'components/Card';
-//@import 'components/Table';
-//@import 'components/Sidebar';
-//@import 'components/Header';
-//@import 'components/FilterDropdown';
+//@use 'components/Button';
+//@use 'components/StatusBadge';
+//@use 'components/Card';
+//@use 'components/Table';
+//@use 'components/Sidebar';
+//@use 'components/Header';
+//@use 'components/FilterDropdown';
 
 // 5. Page-specific (only overrides / unique rules)
-@import 'pages/_login';
-//@import 'pages/users';
-//@import 'pages/user-details';
+@use 'pages/login';
+//@use 'pages/users';
+//@use 'pages/user-details';
