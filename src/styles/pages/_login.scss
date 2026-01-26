@@ -1,0 +1,230 @@
+@import '../abstracts/mixins';
+.login-page {
+  @include flex(row, stretch, center);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: $color-primary;
+
+  .login-left {
+    @include flex(column, flex-start, flex-start);
+    flex: 1 1 50%;
+    padding: $space-10 $space-12;
+    position: relative;
+    height: 100%;
+
+    .logo {
+      margin-bottom: $space-12;
+      padding: $space-10;
+      img {
+        height: 36px;                  
+      }
+    }
+
+    .illustration-container {
+      flex: 1;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .main-illustration {
+        max-width: 100%;
+        max-height: 85vh;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .login-right {
+    @include flex(column, center, center);
+    flex: 1 1 50%;
+    padding: $space-10;
+    height: 100%;
+    box-shadow: $shadow-md;           
+  }
+
+  .form-container {
+    width: 100%;
+    padding: $space-8;
+
+      h1 {
+        font-size: 40px;
+        font-weight: $font-weight-bold;
+        color: $color-text-primary;
+        margin-bottom: $space-2;
+        letter-spacing: $tracking-tight;
+      }
+        
+
+    .subtitle {
+      color: $color-text-secondary;
+      font-size: 20px;
+      margin-bottom: $space-10;
+    }
+
+    .error-message {
+      color: $color-error;
+      font-size: 0.875rem;
+      margin-bottom: $space-4;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: $space-6;
+
+      input {
+        width: 100%;
+        padding: $space-4 $space-5;
+        border: 1px solid $color-border;
+        border-radius: $radius-md;
+        font-size: 1rem;
+        color: $color-text-primary;
+        background: white;
+        cursor: text;
+        transition: all 0.25s ease;
+
+        &::placeholder {
+          color: $color-text-secondary;
+          font-size: 14px;             
+        }
+
+        &:focus {
+      outline: none;
+      border-color: $color-highlight;                    
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.2); 
+      transform: scale(1.02);                        
+      background: rgba($color-primary, 0.02);         
+    }
+      }
+    }
+   
+
+
+    .password-group {
+      position: relative;
+
+      .password-wrapper {
+        position: relative;
+
+        input {
+          padding-right: $space-10;    
+        }
+
+        .show-toggle {
+          position: absolute;
+          right: $space-4;
+          top: 50%;
+          transform: translateY(-50%);
+          background: none;
+          border: none;
+          color: $color-highlight;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: $font-weight-semibold;
+          cursor: pointer;
+          padding: 0;
+          letter-spacing: $tracking-wide;
+          cursor: pointer;
+
+          &:focus,
+  &:focus-visible {
+    outline: none;  
+    border: none;           
+    box-shadow: none; 
+  }
+
+  &:active {
+    opacity: 0.8;
+    transform: translateY(-50%) scale(0.98);
+  }
+        }
+      }
+    }
+
+    .forgot-password {
+      display: block;
+      text-align: left;
+      color: $color-highlight;
+      font-size: 12px;
+      font-weight: $font-weight-semibold;
+      margin: $space-3 0 $space-8 0;
+      text-decoration: none;
+      letter-spacing: $tracking-wide;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    .login-button {
+      width: 100%;
+      padding: $space-5;
+      background: $color-highlight;
+      color: $color-primary;
+      border: none;
+      border-radius: $radius-md;
+      font-size: 14px;
+      font-weight: $font-weight-semibold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: translateY(-1px) scale(1.01);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      &:disabled {
+        background: #cbd5e1;
+        cursor: not-allowed;
+      }
+    }
+     .field-error{
+        color: $color-error;
+        font-size: 12px;
+      }
+  }
+
+  
+
+  @include respond-below(lg) {
+    flex-direction: column;
+
+    .login-left {
+      height: 45vh;
+      min-height: 380px;
+      padding: $space-8 $space-6;
+    }
+
+    .login-right {
+      flex: 1;
+      padding: $space-8 $space-6;
+    }
+  }
+
+  @include respond-below(sm) {
+     .login-right, .login-left {
+      flex: 1;
+      padding: $space-8 $space-2;
+     width: 100%;
+    }
+    .illustration-container{
+      padding: 0 $space-5;
+    }
+
+    .form-container {
+      width: 100%;
+      padding: 0 $space-5;
+    }
+
+    .welcome-header h1 {
+      font-size: 2rem;
+    }
+  }
+}
