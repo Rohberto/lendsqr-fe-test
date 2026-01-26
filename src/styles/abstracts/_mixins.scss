@@ -1,0 +1,38 @@
+// Flex helper (very common)
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Responsive breakpoint helper (mobile-first)
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@mixin respond-below($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value {
+    @media (max-width: ($value - 0.02px)) {
+  @content;
+}
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found.";
+  }
+}
+
+// Optional: respond-above if you ever need desktop-first
+@mixin respond-above($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+}
