@@ -1,0 +1,78 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.action-menu {
+  position: absolute;
+  top: calc(100% + $space-2);
+  right: 0;
+  background: $color-primary;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-lg;
+  min-width: 180px;
+  overflow: hidden;
+  z-index: 100;
+  
+  .action-menu-close {
+    display: none;
+    
+    @include respond-below(md) {
+      display: flex;
+      position: absolute;
+      top: $space-2;
+      right: $space-2;
+      background: none;
+      border: none;
+      padding: $space-1;
+      cursor: pointer;
+      @include flex(row, center, center);
+      border-radius: $radius-sm;
+      transition: background 0.2s ease;
+      z-index: 1;
+      
+      &:hover {
+        background: rgba($color-text-secondary, 0.1);
+      }
+      
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .action-menu-item {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    width: 100%;
+    padding: $space-4 $space-5;
+    text-align: left;
+    background: none;
+    border: none;
+    color: $color-text-primary;
+    font-size: $font-size-sm;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    
+    @include respond-below(md) {
+      &:first-of-type {
+        padding-top: $space-6; // Extra padding for close button
+      }
+    }
+
+    &:hover {
+      background: rgba($color-highlight, 0.05);
+    }
+
+    &:focus {
+      outline: none;
+      background: rgba($color-highlight, 0.05);
+    }
+
+    .action-icon {
+      width: 12px;
+      height: 12px;
+      color: $color-text-primary;
+    }
+  }
+}
