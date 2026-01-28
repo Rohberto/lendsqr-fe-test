@@ -3,13 +3,13 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import Users from './pages/Users/Users';
 
-// Protected Route wrapper component
+// protected Route wrapper component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated } = useAuth();
   return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />;
 };
 
-// Public Route wrapper (redirect to dashboard if already logged in)
+// public Route wrapper (redirect to dashboard if already logged in)
 const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated } = useAuth();
   return isAuthenticated ? <Navigate to="/dashboard/users" replace /> : <>{children}</>;
@@ -18,7 +18,7 @@ const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 function AppRoutes() {
   return (
     <Routes>
-      {/* Public routes */}
+      {/* public routes */}
       <Route 
         path="/" 
         element={
@@ -37,7 +37,7 @@ function AppRoutes() {
         } 
       />
       
-      {/* Protected dashboard routes */}
+      {/* protected dashboard routes */}
       <Route
         path="/dashboard/users"
         element={
@@ -54,12 +54,6 @@ function AppRoutes() {
             <Users />
           </ProtectedRoute>
         }
-      />
-      
-      {/* Redirect /dashboard to /dashboard/users by default */}
-      <Route 
-        path="/dashboard" 
-        element={<Navigate to="/dashboard/users" replace />} 
       />
       
       {/* 404 - Not Found */}
