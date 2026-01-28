@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import Users from './pages/Users/Users';
+import UserDetails from './pages/UserDetails/UserDetails';
 
 // protected Route wrapper component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -47,13 +48,20 @@ function AppRoutes() {
         }
       />
       
+      {/* User Details Route - NEW */}
       <Route
         path="/dashboard/users/:userId"
         element={
           <ProtectedRoute>
-            <Users />
+            <UserDetails />
           </ProtectedRoute>
         }
+      />
+      
+      {/* Redirect /dashboard to /dashboard/users */}
+      <Route
+        path="/dashboard"
+        element={<Navigate to="/dashboard/users" replace />}
       />
       
       {/* 404 - Not Found */}
