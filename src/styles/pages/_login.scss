@@ -15,11 +15,42 @@
     position: relative;
     height: 100%;
 
+    @include respond-below(lg) {
+      padding: $space-8 $space-6;
+    }
+
+    @include respond-below(md) {
+      padding: $space-6 $space-4;
+    }
+
     .logo {
       margin-bottom: $space-12;
       padding: $space-10;
+      
+      @include respond-below(lg) {
+        margin-bottom: $space-8;
+        padding: $space-6;
+      }
+      
+      @include respond-below(md) {
+        margin-bottom: $space-4;
+        padding: $space-4;
+      }
+      
       img {
-        height: 36px;                  
+        height: 36px;
+        
+        @include respond-below(lg) {
+          height: 28px;
+        }
+        
+        @include respond-below(md) {
+          height: 24px;
+        }
+        
+        @include respond-below(sm) {
+          height: 20px;
+        }
       }
     }
 
@@ -32,10 +63,22 @@
       align-items: center;
       justify-content: center;
 
+      @include respond-below(sm) {
+        padding: 0 $space-5;
+      }
+
       .main-illustration {
         max-width: 100%;
         max-height: 85vh;
         object-fit: contain;
+        
+        @include respond-below(lg) {
+          max-height: 40vh;
+        }
+        
+        @include respond-below(md) {
+          max-height: 40vh;
+        }
       }
     }
   }
@@ -45,26 +88,68 @@
     flex: 1 1 50%;
     padding: $space-10;
     height: 100%;
-    box-shadow: $shadow-md;           
+    box-shadow: $shadow-md;
+    
+    @include respond-below(lg) {
+      padding: $space-8 $space-6;
+    }
+    
+    @include respond-below(md) {
+      padding: $space-6 $space-4;
+    }
   }
 
   .form-container {
     width: 100%;
     padding: $space-8;
+    
+    @include respond-below(md) {
+      padding: $space-5;
+    }
+    
+    @include respond-below(sm) {
+      padding: 0 $space-5;
+    }
 
-      h1 {
-        font-size: 40px;
-        font-weight: $font-weight-bold;
-        color: $color-text-primary;
-        margin-bottom: $space-2;
-        letter-spacing: $tracking-tight;
+    h1 {
+      font-size: 40px;
+      font-weight: $font-weight-bold;
+      color: $color-text-primary;
+      margin-bottom: $space-2;
+      letter-spacing: $tracking-tight;
+      
+      @include respond-below(lg) {
+        font-size: 32px;
       }
-        
+      
+      @include respond-below(md) {
+        font-size: 28px;
+      }
+      
+      @include respond-below(sm) {
+        font-size: 24px;
+      }
+    }
 
     .subtitle {
       color: $color-text-secondary;
       font-size: 20px;
       margin-bottom: $space-10;
+      
+      @include respond-below(lg) {
+        font-size: 18px;
+        margin-bottom: $space-8;
+      }
+      
+      @include respond-below(md) {
+        font-size: 16px;
+        margin-bottom: $space-6;
+      }
+      
+      @include respond-below(sm) {
+        font-size: 14px;
+        margin-bottom: $space-5;
+      }
     }
 
     .error-message {
@@ -72,10 +157,18 @@
       font-size: 0.875rem;
       margin-bottom: $space-4;
       text-align: center;
+      
+      @include respond-below(sm) {
+        font-size: 0.75rem;
+      }
     }
 
     .form-group {
       margin-bottom: $space-6;
+      
+      @include respond-below(sm) {
+        margin-bottom: $space-4;
+      }
 
       input {
         width: 100%;
@@ -87,23 +180,30 @@
         background: white;
         cursor: text;
         transition: all 0.25s ease;
+        
+        @include respond-below(sm) {
+          padding: $space-3 $space-4;
+          font-size: 0.875rem;
+        }
 
         &::placeholder {
           color: $color-text-secondary;
-          font-size: 14px;             
+          font-size: 14px;
+          
+          @include respond-below(sm) {
+            font-size: 12px;
+          }
         }
 
         &:focus {
-      outline: none;
-      border-color: $color-highlight;                    
-      box-shadow: 0 0 0 3px rgba($color-primary, 0.2); 
-      transform: scale(1.02);                        
-      background: rgba($color-primary, 0.02);         
-    }
+          outline: none;
+          border-color: $color-highlight;
+          box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+          transform: scale(1.02);
+          background: rgba($color-primary, 0.02);
+        }
       }
     }
-   
-
 
     .password-group {
       position: relative;
@@ -112,7 +212,11 @@
         position: relative;
 
         input {
-          padding-right: $space-10;    
+          padding-right: $space-10;
+          
+          @include respond-below(sm) {
+            padding-right: $space-12;
+          }
         }
 
         .show-toggle {
@@ -129,19 +233,23 @@
           cursor: pointer;
           padding: 0;
           letter-spacing: $tracking-wide;
-          cursor: pointer;
+          
+          @include respond-below(sm) {
+            font-size: 11px;
+            right: $space-3;
+          }
 
           &:focus,
-  &:focus-visible {
-    outline: none;  
-    border: none;           
-    box-shadow: none; 
-  }
+          &:focus-visible {
+            outline: none;
+            border: none;
+            box-shadow: none;
+          }
 
-  &:active {
-    opacity: 0.8;
-    transform: translateY(-50%) scale(0.98);
-  }
+          &:active {
+            opacity: 0.8;
+            transform: translateY(-50%) scale(0.98);
+          }
         }
       }
     }
@@ -155,6 +263,11 @@
       margin: $space-3 0 $space-8 0;
       text-decoration: none;
       letter-spacing: $tracking-wide;
+      
+      @include respond-below(sm) {
+        font-size: 11px;
+        margin: $space-2 0 $space-6 0;
+      }
 
       &:hover,
       &:focus {
@@ -173,6 +286,11 @@
       font-weight: $font-weight-semibold;
       cursor: pointer;
       transition: all 0.2s ease;
+      
+      @include respond-below(sm) {
+        padding: $space-4;
+        font-size: 13px;
+      }
 
       &:hover {
         transform: translateY(-1px) scale(1.01);
@@ -187,13 +305,16 @@
         cursor: not-allowed;
       }
     }
-     .field-error{
-        color: $color-error;
-        font-size: 12px;
+    
+    .field-error {
+      color: $color-error;
+      font-size: 12px;
+      
+      @include respond-below(sm) {
+        font-size: 11px;
       }
+    }
   }
-
-  
 
   @include respond-below(lg) {
     flex-direction: column;
@@ -201,32 +322,31 @@
     .login-left {
       height: 45vh;
       min-height: 380px;
-      padding: $space-8 $space-6;
     }
 
     .login-right {
       flex: 1;
-      padding: $space-8 $space-6;
+    }
+  }
+  
+  @include respond-below(md) {
+    .login-left {
+      height: 40vh;
+      min-height: 300px;
     }
   }
 
   @include respond-below(sm) {
-     .login-right, .login-left {
+    .login-left {
+      height: 35vh;
+      min-height: 300px;
+    }
+    
+    .login-right,
+    .login-left {
       flex: 1;
-      padding: $space-8 $space-2;
-     width: 100%;
-    }
-    .illustration-container{
-      padding: 0 $space-5;
-    }
-
-    .form-container {
+      padding: $space-6 $space-2;
       width: 100%;
-      padding: 0 $space-5;
-    }
-
-    .welcome-header h1 {
-      font-size: 2rem;
     }
   }
 }
