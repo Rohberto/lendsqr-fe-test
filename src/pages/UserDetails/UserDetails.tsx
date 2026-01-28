@@ -111,7 +111,7 @@ const UserDetails: React.FC = () => {
     <DashboardLayout>
       <div className="user-details-page">
         {/* Back Button */}
-        <button className="back-link" onClick={() => navigate('/users')}>
+        <button className="back-link" onClick={() => navigate('/dashboard/users')}>
           <svg width="28" height="10" viewBox="0 0 28 10" fill="none">
             <path d="M0.94997 5.35639C0.994502 5.47123 1.0613 5.57594 1.14684 5.66498L4.89684 9.41498C5.07263 9.5908 5.31285 9.68946 5.56248 9.68946C5.81211 9.68946 6.05233 9.5908 6.22812 9.41498C6.40394 9.23919 6.50259 8.99897 6.50259 8.74934C6.50259 8.49971 6.40394 8.25949 6.22812 8.0837L3.6278 5.49935H26.5312C27.0767 5.49935 27.5312 5.04479 27.5312 4.49935C27.5312 3.95392 27.0767 3.49935 26.5312 3.49935H3.6278L6.22812 0.915038C6.40394 0.739251 6.50259 0.499034 6.50259 0.249403C6.50259 -0.000227984 6.40394 -0.240445 6.22812 -0.416231C6.05233 -0.592017 5.81211 -0.690674 5.56248 -0.690674C5.31285 -0.690674 5.07263 -0.592017 4.89684 -0.416231L1.14684 3.33377C1.0613 3.42281 0.994502 3.52751 0.94997 3.64236C0.901939 3.75818 0.876627 3.88202 0.874989 4.00721C0.873351 4.1324 0.895405 4.25689 0.94997 4.37639Z" fill="#545F7D"/>
           </svg>
@@ -137,7 +137,7 @@ const UserDetails: React.FC = () => {
             <div className="user-avatar-section">
               <div className="user-avatar">
                 <img 
-                  src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${user.username}`} 
+                 src={`https://ui-avatars.com/api/?name=${encodeURIComponent(user.username || 'default')}&size=128&background=random&rounded=true&bold=true`}
                   alt={user.fullName}
                 />
               </div>
