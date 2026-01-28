@@ -16,11 +16,11 @@
     height: 100%;
 
     @include respond-below(lg) {
-      padding: $space-8 $space-6;
+      padding: $space-6 $space-4;
     }
 
     @include respond-below(md) {
-      padding: $space-6 $space-4;
+      padding: $space-4 $space-4;
     }
 
     .logo {
@@ -28,13 +28,13 @@
       padding: $space-10;
       
       @include respond-below(lg) {
-        margin-bottom: $space-8;
-        padding: $space-6;
+        margin-bottom: $space-6;
+        padding: $space-4;
       }
       
       @include respond-below(md) {
-        margin-bottom: $space-4;
-        padding: $space-4;
+        margin-bottom: $space-3;
+        padding: $space-3;
       }
       
       img {
@@ -63,8 +63,12 @@
       align-items: center;
       justify-content: center;
 
+      @include respond-below(lg) {
+        padding: 0 $space-2;
+      }
+
       @include respond-below(sm) {
-        padding: 0 $space-5;
+        padding: 0 $space-4;
       }
 
       .main-illustration {
@@ -73,11 +77,8 @@
         object-fit: contain;
         
         @include respond-below(lg) {
-          max-height: 40vh;
-        }
-        
-        @include respond-below(md) {
-          max-height: 40vh;
+          max-height: 100%;
+          height: auto;
         }
       }
     }
@@ -191,7 +192,7 @@
           font-size: 14px;
           
           @include respond-below(sm) {
-            font-size: $font-size-xs;
+            font-size: 12px;
           }
         }
 
@@ -320,8 +321,9 @@
     flex-direction: column;
 
     .login-left {
-      height: 45vh;
-      min-height: 380px;
+      height: 40vh;
+      min-height: 280px;
+      justify-content: center;
     }
 
     .login-right {
@@ -331,22 +333,25 @@
   
   @include respond-below(md) {
     .login-left {
-      height: 40vh;
-      min-height: 300px;
+      height: 38vh;
+      min-height: 260px;
     }
   }
 
   @include respond-below(sm) {
     .login-left {
-      height: 35vh;
-      min-height: 300px;
+      height: 36vh;
+      min-height: 240px;
     }
     
     .login-right,
     .login-left {
       flex: 1;
-      padding: $space-6 $space-2;
       width: 100%;
+    }
+    
+    .login-right {
+      padding: $space-5 $space-2;
     }
   }
 }
