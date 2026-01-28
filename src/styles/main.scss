@@ -1,28 +1,18 @@
-// 1. Abstracts first (no output)
 @use 'abstracts/variables' as *;
-//@use 'abstracts/functions';
 @use 'abstracts/mixins' as *;
-//@use 'abstracts/breakpoints';
 
-// 2. Base / reset (affects everything)
 @use 'base/reset';
 @use 'base/typography';
-//@use 'base/base';
 
-// 3. Layout (structural)
-//@use 'layout/grid';
-//@use 'layout/sidebar-layout';
+@use 'components/statscard';
+@use 'components/filterPopup';
+@use 'components/actionMenu';
+@use 'components/userstable';
+@use 'components/sidebar';
+@use 'components/navbar';
+@use 'components/dashboardLayout';
+@use 'components/pagination';
 
-// 4. Reusable components
-//@use 'components/Button';
-//@use 'components/StatusBadge';
-//@use 'components/Card';
-//@use 'components/Table';
-//@use 'components/Sidebar';
-//@use 'components/Header';
-//@use 'components/FilterDropdown';
-
-// 5. Page-specific (only overrides / unique rules)
 @use 'pages/login';
-//@use 'pages/users';
-//@use 'pages/user-details';
+@use 'pages/users';
+
