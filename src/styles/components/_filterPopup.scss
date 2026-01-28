@@ -1,5 +1,6 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
+@use 'sass:color';
 
 .filter-popup {
   position: absolute;
@@ -151,7 +152,7 @@
          
 
           &:hover {
-            background: darken($color-highlight, 5%);
+             background-color: color.adjust($color-highlight, $lightness: -5%, $space: hsl);
             transform: translateY(-1px);
           }
         }

@@ -48,8 +48,17 @@
     padding: 0;
     transition: color 0.2s ease;
 
+    @include respond-below(md) {
+        padding: $spacer $space-6;
+      font-size: 14px;
+    }
+
     &:hover {
       color: $color-text-primary;
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 
@@ -59,15 +68,33 @@
     gap: $space-4;
     flex-wrap: wrap;
 
+    @include respond-below(md) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $space-6;
+      padding: $spacer $space-6;
+    }
+
     .page-title {
       font-size: 24px;
       font-weight: $font-weight-medium;
       color: $color-text-primary;
+
+      @include respond-below(md) {
+        font-size: 20px;
+      }
     }
 
     .action-buttons {
       @include flex(row, flex-end, center);
       gap: $space-5;
+
+      @include respond-below(md) {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: $space-3;
+      }
 
       button {
         padding: $space-3 $space-6;
@@ -80,6 +107,10 @@
         text-transform: uppercase;
         letter-spacing: 0.5px;
 
+        @include respond-below(md) {
+          width: 100%;
+        }
+
         &.blacklist-btn {
           background: transparent;
           border-color: $status-blacklisted;
@@ -87,6 +118,10 @@
 
           &:hover {
             background: $status-blacklisted-bg;
+          }
+
+          &:focus {
+            outline: none;
           }
         }
 
@@ -97,6 +132,10 @@
 
           &:hover {
             background: rgba($color-highlight, 0.1);
+          }
+
+          &:focus {
+            outline: none;
           }
         }
       }
@@ -111,10 +150,14 @@
     overflow: hidden;
 
     .user-info-section {
-      @include flex(row, space-between, center);
+      @include flex(row, flex-start, center);
       padding: $space-8;
       gap: $space-8;
       flex-wrap: wrap;
+
+      @include respond-below(md) {
+        gap: $space-6;
+      }
 
       @include respond-below(lg) {
         flex-direction: column;
@@ -132,6 +175,11 @@
           overflow: hidden;
           background: $color-primary-dark;
 
+          @include respond-below(md) {
+            width: 80px;
+            height: 80px;
+          }
+
           img {
             width: 100%;
             height: 100%;
@@ -145,6 +193,10 @@
             font-weight: $font-weight-medium;
             color: $color-text-primary;
             margin-bottom: $space-2;
+
+            @include respond-below(md) {
+              font-size: 18px;
+            }
           }
 
           .user-id {
@@ -168,6 +220,7 @@
         .tier-label {
           font-size: 14px;
           color: $color-text-secondary;
+          font-weight: $font-weight-medium;
           margin-bottom: $space-2;
         }
 
@@ -183,7 +236,7 @@
             }
 
             &.empty {
-              color: rgba($color-text-secondary, 0.2);
+              color: rgba(#E9B200, 0.2);
             }
           }
         }
@@ -195,20 +248,23 @@
           font-weight: $font-weight-medium;
           color: $color-text-primary;
           margin-bottom: $space-2;
+
+          @include respond-below(md) {
+            font-size: 18px;
+          }
         }
 
         .bank-details {
           font-size: 12px;
-          color: $color-text-secondary;
+          color: $color-text-primary;
         }
       }
     }
 
     .tabs-section {
       @include flex(row, flex-start, center);
-      border-top: 1px solid $color-border;
       overflow-x: auto;
-      
+
       &::-webkit-scrollbar {
         height: 4px;
       }
@@ -225,8 +281,17 @@
         transition: all 0.2s ease;
         position: relative;
 
+        @include respond-below(md) {
+          padding: $space-4 $space-6;
+          font-size: 14px;
+        }
+
         &:hover {
           color: $color-text-primary;
+        }
+
+        &:focus {
+          outline: none;
         }
 
         &.active {
@@ -251,6 +316,10 @@
     border-radius: $radius-sm;
     box-shadow: $shadow-sm;
     padding: $space-8;
+
+    @include respond-below(md) {
+      padding: $space-6;
+    }
 
     .info-section {
       &:not(:last-child) {
@@ -292,6 +361,10 @@
             font-weight: $font-weight-medium;
             color: $color-text-secondary;
             word-break: break-word;
+
+            @include respond-below(md) {
+              font-size: 14px;
+            }
           }
         }
       }
