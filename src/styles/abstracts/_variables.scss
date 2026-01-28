@@ -6,10 +6,16 @@ $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
+//FONTS SIZES
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 24px;
+
 //COLORS
 $color-primary: #FFFFFF;
 $color-primary-dark: #FBFBFB;
 $color-text-primary: #213F7D;
+$color-text-primary-rgb: rgb(33, 63, 125);
 $color-text-secondary: #545F7D;
 
 $color-border: #545F7D26;
@@ -55,12 +61,16 @@ $radius-lg: 12px;
 $radius-pill: 9999px;
 
 //SHADOWS
-$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08),
-            0 1px 2px rgba(0, 0, 0, 0.06);
+$shadow-sm:  3px 5px 20px 0px #0000000A;
 $shadow-md: 0px 15px 90px 0px rgba(0, 0, 0, 0.03);
 $shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08),
             0 5px 15px rgba(0, 0, 0, 0.05);
 $shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.10),
             0 10px 20px rgba(0, 0, 0, 0.06);
+
+            
+
+
+$transition-base: 0.2s ease;
 
 
