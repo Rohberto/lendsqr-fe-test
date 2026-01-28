@@ -60,7 +60,11 @@ const ActionMenu: React.FC<ActionMenuProps> = ({ userId, onClose, onViewDetails 
 
   return (
     <div className="action-menu" ref={menuRef} onClick={(e) => e.stopPropagation()}>
-    
+      <button className="action-menu-close" onClick={onClose} aria-label="Close menu">
+        <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+          <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#545F7D"/>
+        </svg>
+      </button>
       
       <button className="action-menu-item" onClick={handleViewDetails}>
         <img className="action-icon" src={ViewIcon} alt="" aria-hidden="true" />
