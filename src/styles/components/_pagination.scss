@@ -1,0 +1,190 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.table-footer {
+  @include flex(row, space-between, center);
+  padding: $space-5 $space-8;
+  background: transparent;
+  border-top: 1px solid $color-border;
+  gap: $space-6;
+
+  @include respond-below(md) {
+    flex-direction: column;
+    padding: $space-4 $space-5;
+    gap: $space-4;
+    align-items: stretch;
+  }
+  
+  @include respond-below(sm) {
+    padding: $space-4 $space-4;
+    gap: $space-3;
+  }
+
+  .items-per-page {
+    @include flex(row, flex-start, center);
+    gap: $space-3;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    flex-wrap: wrap;
+
+    @include respond-below(md) {
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    @include respond-below(sm) {
+      font-size: $font-size-xs;
+      gap: $space-2;
+    }
+
+    .page-size-wrap {
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg) scale(1);
+
+        width: 12px;
+        height: 12px;
+
+        background: url("../../assets/Icons/drop.svg") no-repeat center;
+        background-size: contain;
+
+        opacity: 0.7;
+        pointer-events: none;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        
+        @include respond-below(sm) {
+          width: 10px;
+          height: 10px;
+          right: 8px;
+        }
+      }
+
+      &:focus-within::after {
+        transform: translateY(-50%) rotate(180deg) scale(1.05);
+        opacity: 1;
+      }
+
+      .page-size-select {
+        padding: $space-2 $space-8 $space-2 $space-4;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        background: $color-primary-dark;
+        color: $color-text-primary;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        cursor: pointer;
+        outline: none;
+
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        
+        @include respond-below(sm) {
+          padding: $space-2 $space-6 $space-2 $space-3;
+          font-size: $font-size-xs;
+        }
+
+        &:hover {
+          border-color: $color-highlight;
+        }
+
+        &:focus {
+          border-color: $color-highlight;
+        }
+
+        &::-ms-expand {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    @include flex(row, flex-end, center);
+    gap: $space-2;
+    flex-wrap: wrap;
+
+    @include respond-below(md) {
+      justify-content: center;
+      width: 100%;
+    }
+    
+    @include respond-below(sm) {
+      gap: $space-1;
+    }
+
+    .pagination-button {
+      min-width: 24px;
+      height: 24px;
+      padding: 0 $space-2;
+      background: none;
+      border: none;
+      color: rgba($color-text-secondary, 0.3);
+      font-size: 16px;
+      font-weight: $font-weight-medium;
+      cursor: pointer;
+      border-radius: $radius-sm;
+      transition: all 0.2s ease;
+      
+      @include respond-below(sm) {
+        min-width: 24px;
+        height: 24px;
+        font-size: 11px;
+      }
+
+      &:hover:not(:disabled) {
+        color: $color-text-primary;
+      }
+
+      &.active {
+        color: $color-text-primary;
+        outline: none;
+      }
+
+      &:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+      
+      &.nav-button {
+        background: $color-border;
+        border: 1px solid $color-border;
+        font-weight: $font-weight-semibold;
+        width: 28px;
+        font-size: 14px;
+        
+        @include respond-below(sm) {
+          min-width: 32px;
+          padding: 0 $space-2;
+        }
+        
+        &:hover:not(:disabled) {
+         color: $color-text-primary;
+        }
+        
+      }
+      
+      // Hide some page numbers on very small screens
+      @include respond-below(sm) {
+        &.hide-mobile {
+          display: none;
+        }
+      }
+    }
+
+    .pagination-dots {
+      color: rgba($color-text-secondary, 0.3);
+      padding: 0 $space-1;
+      
+      @include respond-below(sm) {
+        font-size: $font-size-xs;
+      }
+    }
+  }
+}
