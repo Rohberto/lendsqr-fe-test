@@ -101,7 +101,7 @@ const isActive = (path?: string) => {
 };
 
   const handleLinkClick = () => {
-    // Close sidebar on mobile when link is clicked
+    // close sidebar on mobile when link is clicked
     if (onClose) {
       onClose();
     }
