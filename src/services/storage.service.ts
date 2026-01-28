@@ -79,7 +79,7 @@ export class UsersAPI {
   }
   
   /**
-   * update user status (blacklist/activate)
+   * update user status
    */
   static async updateUserStatus(id: string, status: User['status']): Promise<User | null> {
     await delay(300);
