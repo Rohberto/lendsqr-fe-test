@@ -1,0 +1,57 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.dashboard-layout {
+  min-height: 100vh;
+  background: $color-primary-dark;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  
+  .sidebar-overlay {
+    display: none;
+    
+    @include respond-below(lg) {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 899;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  }
+  
+  .dashboard-main {
+    margin-left: 283px;
+    margin-top: 100px;
+    padding: $space-8 $space-10;
+    min-height: calc(100vh - 100px);
+    
+    @include respond-below(lg) {
+      margin-left: 0;
+      padding: $space-6;
+    }
+    
+    @include respond-below(md) {
+      padding: $space-6 0; // Remove horizontal padding on mobile
+      margin-top: 70px; // Match mobile navbar height
+    }
+    
+    @include respond-below(sm) {
+      padding: $space-4 0; // Remove horizontal padding on mobile
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
