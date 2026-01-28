@@ -191,7 +191,7 @@
           font-size: 14px;
           
           @include respond-below(sm) {
-            font-size: 12px;
+            font-size: $font-size-xs;
           }
         }
 
