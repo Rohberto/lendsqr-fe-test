@@ -1,0 +1,55 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.users-page {
+  padding: 0 $space-6;
+  
+  @include respond-below(md) {
+    padding: 0 $space-4;
+  }
+  
+  @include respond-below(sm) {
+    padding: 0 $space-3;
+  }
+
+  .page-title {
+    font-size: 24px;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+    margin-bottom: $space-10;
+    
+    @include respond-below(md) {
+      font-size: 20px;
+      margin-bottom: $space-6;
+    }
+    
+    @include respond-below(sm) {
+      font-size: 18px;
+      margin-bottom: $space-5;
+    }
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-6;
+    margin-bottom: $space-8;
+
+    @include respond-below(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $space-5;
+    }
+
+    @include respond-below(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $space-4;
+      margin-bottom: $space-6;
+    }
+
+    @include respond-below(sm) {
+      grid-template-columns: 1fr;
+      gap: $space-4;
+      margin-bottom: $space-5;
+    }
+  }
+}
