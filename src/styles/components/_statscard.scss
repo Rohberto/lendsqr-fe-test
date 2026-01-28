@@ -1,0 +1,89 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.stats-card {
+  background: $color-primary;
+  border: 1px solid #213F7D0F;
+  border-radius: $radius-sm;
+  box-shadow: $shadow-sm;
+  padding: $space-6 $space-8;
+  @include flex(column, flex-start, flex-start);
+  gap: $space-4;
+  transition: all 0.3s ease;
+  
+  @include respond-below(md) {
+    padding: $space-5 $space-6;
+    gap: $space-3;
+  }
+  
+  @include respond-below(sm) {
+    padding: $space-4 $space-5;
+    gap: $space-3;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+  
+  .stats-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    @include flex(row, center, center);
+    font-size: 1.5rem;
+    
+    @include respond-below(sm) {
+      width: 36px;
+      height: 36px;
+      font-size: 1.25rem;
+    }
+    
+    &.pink {
+     background: rgba(223, 24, 255, 0.1);
+    }
+    
+    &.purple {
+      background: rgba(87, 24, 255, 0.1);
+    }
+    
+    &.orange {
+    background: rgba(245, 95, 68, 0.1);
+    }
+    
+    &.red {
+     background: rgba(255, 51, 102, 0.1);
+    }
+  }
+  
+  .stats-card-content {
+    width: 100%;
+    
+    .stats-card-title {
+      font-size: $font-size-sm;
+      color: $color-text-secondary;
+      font-weight: $font-weight-medium;
+      text-transform: uppercase;
+      margin-bottom: $space-3;
+      
+      @include respond-below(sm) {
+        font-size: $font-size-xs;
+        margin-bottom: $space-2;
+      }
+    }
+    
+    .stats-card-value {
+      font-size: $font-size-base;
+      color: $color-text-primary;
+      font-weight: $font-weight-semibold;
+      
+      @include respond-below(md) {
+        font-size: 20px;
+      }
+      
+      @include respond-below(sm) {
+        font-size: 18px;
+      }
+    }
+  }
+}
