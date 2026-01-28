@@ -1,0 +1,166 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.filter-popup {
+  position: absolute;
+  top: 20px;
+  background: $color-primary;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  box-shadow: $shadow-sm;
+  padding: $space-8;
+  width: 270px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  form {
+    .form-group {
+      margin-bottom: $space-5;
+
+      label {
+        display: block;
+        font-size: $font-size-sm;
+        color: $color-text-secondary;
+        font-weight: $font-weight-medium;
+        margin-bottom: $space-2;
+        text-transform: capitalize;
+      }
+
+    
+      input,
+      select {
+        width: 100%;
+        padding: $space-3 $space-4;
+        border: 1px solid $color-border;
+        border-radius: $radius-md;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        color: $color-text-primary;
+        background: $color-primary;
+        outline: none;
+        transition: border-color 0.2s ease;
+
+        &::placeholder {
+          color: rgba($color-text-secondary, 0.5);
+        }
+
+        &:focus {
+          border-color: $color-highlight;
+        }
+      }
+
+      
+      .select-wrap {
+        position: relative;
+
+        select {
+          cursor: pointer;
+
+          
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+
+       
+          padding: $space-3 $space-10 $space-3 $space-4;
+
+          
+          line-height: 1.2;
+        }
+
+        
+        select::-ms-expand {
+          display: none;
+        }
+
+       
+        &::after {
+          content: "";
+          position: absolute;
+          right: 14px;
+          top: 50%;
+          transform: translateY(-50%) rotate(0deg) scale(1);
+
+          width: 12px;
+          height: 12px;
+
+          background: url("../../assets/Icons/drop.svg") no-repeat center;
+          background-size: contain;
+
+          opacity: 0.7;
+          pointer-events: none;
+
+          transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        
+        &.is-open::after {
+          transform: translateY(-50%) rotate(180deg) scale(1.05);
+          opacity: 1;
+        }
+      }
+
+      
+      input[type="date"] {
+        cursor: pointer;
+
+        &::-webkit-calendar-picker-indicator {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .button-group {
+      @include flex(row, space-between, center);
+      gap: $space-4;
+      margin-top: $space-8;
+
+      button {
+        flex: 1;
+        padding: $space-3 $space-4;
+        border: none;
+        border-radius: $radius-md;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-semibold;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+       
+        &:focus {
+          outline: none;
+        }
+
+        &:focus-visible {
+          outline: 2px solid rgba($color-highlight, 0.6);
+          outline-offset: 2px;
+        }
+
+        &.reset-button {
+          background: transparent;
+          border: 1px solid $color-text-secondary;
+          color: $color-text-secondary;
+
+          &:hover {
+            background: rgba($color-text-secondary, 0.05);
+          }
+        }
+
+        &.filter-button {
+          background: $color-highlight !important;
+          color: $color-primary;
+         
+
+          &:hover {
+            background: darken($color-highlight, 5%);
+            transform: translateY(-1px);
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    padding: $space-6;
+    max-width: 100%;
+  }
+}
