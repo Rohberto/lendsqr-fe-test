@@ -4,8 +4,8 @@ A modern admin dashboard application built with React, TypeScript, and SCSS for 
 
 ## 🔗 Links
 
-- **Live Demo**: [https://your-name-lendsqr-fe-test.vercel.app](https://your-name-lendsqr-fe-test.vercel.app)
-- **GitHub Repository**: [https://github.com/yourusername/lendsqr-fe-test](https://github.com/yourusername/lendsqr-fe-test)
+- **Live Demo**: [https://robert-oluwaseun-lendsqr-fe-test.vercel.app/](https://robert-oluwaseun-lendsqr-fe-test.vercel.app)
+- **GitHub Repository**: [https://github.com/Rohberto/lendsqr-fe-test/tree/main](https://github.com/Rohberto/lendsqr-fe-test/tree/main)
 - **Loom Video**: [Your 3-minute walkthrough video](https://www.loom.com/share/your-video-id)
 
 ## 📋 Table of Contents
@@ -110,6 +110,7 @@ src/
 │   ├── Login/         # Login page
 │   ├── Users/         # Users list page
 │   └── UserDetails/   # User details page
+|   
 ├── services/           # API services and utilities
 ├── types/              # TypeScript type definitions
 ├── abstracts/          # SCSS variables and mixins

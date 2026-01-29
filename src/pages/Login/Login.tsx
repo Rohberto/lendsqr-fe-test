@@ -60,7 +60,7 @@ const Login: React.FC = () => {
     try {
       await new Promise(resolve => setTimeout(resolve, 500));
 
-      login(); // This updates both localStorage and context state
+      login();
       navigate('/dashboard/users', { replace: true });
     } catch (err) {
       setErrors({ general: 'Something went wrong. Please try again.' });
