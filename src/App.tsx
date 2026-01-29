@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
 import Users from './pages/Users/Users';
 import UserDetails from './pages/UserDetails/UserDetails';
+import NotFound from './pages/NotFound';
 
 // protected Route wrapper component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -10,7 +11,7 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
   return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />;
 };
 
-// public Route wrapper (redirect to dashboard if already logged in)
+// public Route wrapper 
 const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isAuthenticated } = useAuth();
   return isAuthenticated ? <Navigate to="/dashboard/users" replace /> : <>{children}</>;
@@ -48,7 +49,6 @@ function AppRoutes() {
         }
       />
       
-      {/* User Details Route - NEW */}
       <Route
         path="/dashboard/users/:userId"
         element={
@@ -58,19 +58,11 @@ function AppRoutes() {
         }
       />
       
-      {/* Redirect /dashboard to /dashboard/users */}
-      <Route
-        path="/dashboard"
-        element={<Navigate to="/dashboard/users" replace />}
-      />
-      
       {/* 404 - Not Found */}
       <Route 
         path="*" 
         element={
-          <div style={{ padding: '2rem', textAlign: 'center' }}>
-            404 - Page Not Found
-          </div>
+          <NotFound/>
         } 
       />
     </Routes>
