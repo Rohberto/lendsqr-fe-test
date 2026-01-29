@@ -1,5 +1,5 @@
 @use '../abstracts/mixins' as *;
-@use '../abstracts//variables' as *;
+@use '../abstracts/variables' as *;
 
 .login-page {
   @include flex(row, stretch, center);
@@ -339,19 +339,66 @@
   }
 
   @include respond-below(sm) {
-    .login-left {
-      height: 36vh;
-      min-height: 240px;
-    }
-    
-    .login-right,
-    .login-left {
-      flex: 1;
+    height: 100dvh;
+    flex-direction: column;
+    overflow-y: auto;
+
+    .login-left,
+    .login-right {
+      flex: none;
       width: 100%;
     }
+
+    .login-left {
+      height: 40%;                    
+      max-height: 40%;              
+      justify-content: flex-end;       
+      align-items: center;
+      padding: $space-4 $space-4 $space-3 $space-4; 
     
+    }
+
+    .logo {
+      margin-bottom: $space-3;         
+      padding: $space-3;
+      align-self: flex-start;         
+      img {
+        height: 32px;
+      }
+    }
+
+    .illustration-container {
+      height: auto;
+      max-height: 85%;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;         
+      justify-content: center;
+      padding: 0 $space-3;            
+
+      .main-illustration {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        object-position: bottom;        
+        margin-bottom: -$space-2;       
+    }
+
     .login-right {
-      padding: $space-5 $space-2;
+      flex: 1;
+      padding: $space-5 $space-4 $space-6 $space-4;
+      display: flex;
+      align-items: flex-start;     
+      justify-content: flex-start;
+      overflow-y: auto;
+    }
+
+    .form-container {
+      padding: $space-4 $space-3;     
+      margin-top: -$space-2;         
     }
   }
+}
 }
