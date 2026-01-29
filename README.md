@@ -6,7 +6,7 @@ A modern admin dashboard application built with React, TypeScript, and SCSS for 
 
 - **Live Demo**: [https://robert-oluwaseun-lendsqr-fe-test.vercel.app/](https://robert-oluwaseun-lendsqr-fe-test.vercel.app)
 - **GitHub Repository**: [https://github.com/Rohberto/lendsqr-fe-test/tree/main](https://github.com/Rohberto/lendsqr-fe-test/tree/main)
-- **Loom Video**: [Your 3-minute walkthrough video](https://www.loom.com/share/your-video-id)
+- **Loom Video**: [Your 3-minute walkthrough video](https://www.loom.com/share/b9582eea3c064f429cab6332215e5460)
 
 ## 📋 Table of Contents
 
